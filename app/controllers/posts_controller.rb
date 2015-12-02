@@ -36,6 +36,11 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path
+  end
 
   #strong params, so if someone hacks they can only do the following?
   private
